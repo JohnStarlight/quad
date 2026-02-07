@@ -1,31 +1,31 @@
 package piscine
 
-import "github.com/01-edu/z01"
+import "fmt"
 
 func printLBifLast(i, x int) {
 	if i == x-1 {
-		z01.PrintRune('\n')
+		fmt.Println()
 	}
 }
 
 func printIfMiddleLines(i, x int) {
 	if i == 0 || i == x-1 {
-		z01.PrintRune('|')
+		fmt.Printf("|")
 		// check if last letter if true \n
 		printLBifLast(i, x)
 	} else {
-		z01.PrintRune(' ')
+		fmt.Printf(" ")
 	}
 }
 
 func printIfFirstAndLastLines(j, i, y, x int) {
 	if j == 0 || j == y-1 {
 		if i == 0 || i == x-1 {
-			z01.PrintRune('o')
+			fmt.Printf("o")
 			// check if last letter if true \n
 			printLBifLast(i, x)
 		} else {
-			z01.PrintRune('-')
+			fmt.Printf("-")
 		}
 	} else {
 		printIfMiddleLines(i, x)
@@ -34,9 +34,9 @@ func printIfFirstAndLastLines(j, i, y, x int) {
 
 func QuadA(x, y int) {
 	// check if input is null
-	// if x <= 0 || y <= 0 {
-	// 	return 0
-	// }
+	if x <= 0 || y <= 0 {
+		return
+	}
 	for j := 0; j < y; j++ {
 		for i := 0; i < x; i++ {
 			printIfFirstAndLastLines(j, i, y, x)

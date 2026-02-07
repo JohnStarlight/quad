@@ -44,6 +44,6 @@
 // 	}
 // }
 
-func main() {
-	QuadAA(7, 5)
-}
+// func main() {
+// 	QuadAA(7, 5)
+// }
