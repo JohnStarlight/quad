@@ -2,6 +2,7 @@ package piscine
 
 import "fmt"
 
+// asdasd
 func NegativeInputCheck(x, y int) bool {
 	if x <= 0 || y <= 0 {
 		return true
