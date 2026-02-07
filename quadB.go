@@ -1,7 +1,7 @@
 package piscine
 
-import "github.com/01-edu/z01"
+import "fmt"
 
 func QuadB(x, y int) {
-	z01.PrintRune('a')
+	fmt.Printf("a")
 }

@@ -2,7 +2,7 @@ package piscine
 
 import "fmt"
 
-func printLBifLast(i, x int) {
+func PrintLBifLast(i, x int) {
 	if i == x-1 {
 		fmt.Println()
 	}
