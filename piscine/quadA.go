@@ -3,11 +3,6 @@ package piscine
 import "fmt"
 
 func QuadA(x, y int) {
-	// check if input is null
-	if x <= 0 || y <= 0 {
-		// if either x or y is less than or equal to 0, we don't print anything
-		return
-	}
 	// with "j" counting the height and "i" counting the width, we go through the rectangle row by row
 	for j := 0; j < y; j++ {
 		for i := 0; i < x; i++ {
