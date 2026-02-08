@@ -3,7 +3,6 @@ package piscine
 import "fmt"
 
 func QuadE(x, y int) {
-	// func QuadE(x, y int, TL, LN, TR, FILL, BL, BR string)
 	// check if input is null
 	if x <= 0 || y <= 0 {
 		// if either x or y is less than or equal to 0, we don't print anything
