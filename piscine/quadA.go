@@ -21,5 +21,4 @@ func QuadA(x, y int) {
 		// print a new line after each row
 		fmt.Println()
 	}
-	fmt.Println()
 }
