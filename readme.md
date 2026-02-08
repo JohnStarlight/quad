@@ -1,8 +1,10 @@
 # Quad ASCII Generator (Go)
 
-This project prints simple ASCII-style rectangles directly in the terminal. Each rectangle is built from different border characters depending on which function you call. You choose a width and a height, and the program draws the shape line by line.
+This project prints simple ASCII-style rectangles directly in the terminal.  
+You choose which Quad function to use (A–E) and provide the width and height as command-line arguments.  
+The program validates the input and then prints the corresponding rectangle.
 
-The code is beginner-friendly and helps you understand how loops, conditions, and helper functions work together in Go.
+It is beginner-friendly and demonstrates how to work with loops, conditions, helper functions, and command-line arguments in Go.
 
 ---
 
@@ -16,12 +18,15 @@ The project includes five functions:
 - `QuadD`
 - `QuadE`
 
-Each one prints a rectangle with its own character style.
+Each one prints a rectangle using its own set of border characters.
 
-All of them use the same helper function: printCornerOrLine(i, x, left, mid, right)
+All Quads use the same helper function:
 
+```
+printCornerOrLine(i, x, left, mid, right)
+```
 
-This helper decides whether the current position in a row should be a corner, an edge, or a middle character. This keeps the code clean and avoids repeating the same logic in every Quad function.
+This helper decides whether the current position in a row should be a corner, an edge, or a middle character.
 
 ---
 
@@ -29,89 +34,93 @@ This helper decides whether the current position in a row should be a corner, an
 
 Each Quad function:
 
-- Takes two integers:
+- Accepts two integers:
   - `x` → width (characters per line)
   - `y` → height (number of lines)
-- Checks that both numbers are positive
-- Loops through each row and each column
-- Chooses the correct character based on the position
-- Prints the rectangle directly to the terminal
-
-The functions do not return anything; they simply print the result.
+- Validates that both values are positive
+- Uses nested loops to build the rectangle row by row
+- Prints the correct character depending on the position
+- Prints directly to the terminal (does not return a string)
 
 ---
 
-## Example
+## Running the Program
 
-Calling: QuadA(5, 3)
+The program accepts user input through command-line arguments.
 
+### Syntax
 
-prints:
 ```
-o---o  
-|   |  
+go run . <quad> <width> <height>
+```
+
+### Example
+
+```
+go run . A 5 3
+```
+
+Output:
+
+```
+o---o
+|   |
 o---o
 ```
 
-Calling a different Quad function produces the same shape but with different characters.
+
+### Accepted Quad Names
+
+The program accepts multiple variations for convenience:
+
+```
+A, a, quadA, quada, QuadA, Quada
+B, b, quadB, quadb, QuadB, Quadb
+C, c, quadC, quadc, QuadC, Quadc
+D, d, quadD, quadd, QuadD, Quadd
+E, e, quadE, quade, QuadE, Quade
+```
 
 ---
 
-## How to Run the Program
+## Input Validation
 
-If you already have Go installed, you can run the program by creating a small `main.go` file and calling any of the Quad functions.
+The program checks:
 
-If you do not have Go installed, you can download it from the official website:
+- Width and height must be valid integers  
+- Width and height must be positive  
+- Quad name must match one of the accepted variations  
+
+If any rule is violated, the program prints an error message and stops.
+
+---
+
+## Installation
+
+If you do not have Go installed, download it from:
 
 https://go.dev/dl
 
-The page includes installation instructions for Windows, macOS, and Linux.
-
-After installing Go:
-
-1. Place the project files in a folder, for example: piscine/
-
-
-2. Create a `main.go` file in the same folder or one level above and inside it paste:
+Verify installation:
 
 ```
-package main
-
-import "piscine"
-
-func main() {
-piscine.QuadA(5, 3)
-piscine.QuadC(7, 4)
-} 
+go version
 ```
-
-3. Run the program from the terminal: 
-```
-go run .
-```
-
-The rectangles will appear immediately in the terminal.
-
----
-
-## Input Notes
-
-- If `x <= 0` or `y <= 0`, nothing is printed.
-- Very large values can produce huge amounts of output and may slow down or freeze the terminal.
-- The functions print directly to standard output and do not return strings.
 
 ---
 
 ## Project Structure
 
-piscine/  
-│  
-├── quadA.go  
-├── quadB.go  
-├── quadC.go  
-├── quadD.go  
-├── quadE.go  
-└── printCoLi.go
+```
+piscine/
+│
+├── quadA.go
+├── quadB.go
+├── quadC.go
+├── quadD.go
+├── quadE.go
+└── printCornerOrLine.go
+```
 
-
-Each Quad file contains one rectangle style, and the helper printCoLi file contains the shared printing logic.
+Each Quad file contains one rectangle style.  
+The helper file contains the shared printing logic.
