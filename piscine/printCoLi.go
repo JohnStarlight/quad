@@ -15,5 +15,4 @@ func printCornerOrLine(i, x int, left, mid, right string) {
 		// print the middle character
 		fmt.Print(mid)
 	}
-	// fmt.Println()
 }
