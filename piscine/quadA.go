@@ -2,44 +2,29 @@ package piscine
 
 import "fmt"
 
-func printLBifLast(i, x int) {
-    if i == x-1 {
-        fmt.Println()
-    }
-}
-
-func printIfMiddleLines(i, x int) {
-    if i == 0 || i == x-1 {
-        fmt.Printf("|")
-        // check if last letter if true \n
-        printLBifLast(i, x)
-    } else {
-        fmt.Printf(" ")
-    }
-}
-
-func printIfFirstAndLastLines(j, i, y, x int) {
-    if j == 0 || j == x-1 {
-        if i == 0 || i == x-1 {
-            fmt.Printf("o")
-            // check if last letter if true \n
-            printLBifLast(i, x)
-        } else {
-            fmt.Printf("-")
-        }
-    } else {
-        printIfMiddleLines(i, x)
-    }
-}
-
 func QuadA(x, y int) {
-    // check if input is null
-    if x <= 0 || y <= 0 {
-        return
-    }
-    for j := 0; j < y; j++ {
-        for i := 0; i < x; i++ {
-            printIfFirstAndLastLines(j, i, y, x)
-        }
-    }
+	// check if input is null
+	if x <= 0 || y <= 0 {
+		// if either x or y is less than or equal to 0, we don't print anything
+		return
+	}
+	// with "j" counting the height and "i" counting the width, we go through the rectangle row by row
+	for j := 0; j < y; j++ {
+		for i := 0; i < x; i++ {
+			// check if it's the first or last line, and print the appropriate characters
+			if j == 0 {
+				// print the corners and the line for the first line
+				printCornerOrLine(i, x, "o", "-", "o")
+			} else if j == y-1 {
+				// print the corners and the line for the last line
+				printCornerOrLine(i, x, "o", "-", "o")
+			} else {
+				// print the middle lines
+				printCornerOrLine(i, x, "|", " ", "|")
+			}
+		}
+		// print a new line after each row
+		fmt.Println()
+	}
+	fmt.Println()
 }
