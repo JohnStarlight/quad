@@ -112,14 +112,17 @@ go version
 ## Project Structure
 
 ```
-piscine/
-│
-├── quadA.go
-├── quadB.go
-├── quadC.go
-├── quadD.go
-├── quadE.go
-└── printCornerOrLine.go
+yourpath/
+        │
+        ├── main.go
+        └── piscine/
+                  │
+                  ├── quadA.go
+                  ├── quadB.go
+                  ├── quadC.go
+                  ├── quadD.go
+                  ├── quadE.go
+                  └── printCoLi.go
 ```
 
 Each Quad file contains one rectangle style.  
