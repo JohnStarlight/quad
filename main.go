@@ -34,18 +34,22 @@ func main() {
 		return
 	}
 
-	//Choose the function
-	if quad == "A" || quad == "a" || quad == "quadA" || quad == "quada" || quad == "Quada" || quad == "QuadA" {
+	//Choose the function with a switch statement based on the user's input for the quad type.
+	//Switch simplifies multiple if-else statements when checking the same variable against different values.
+	//When the user inputs a quad type, it will match one of the cases and execute the corresponding function from the piscine package
+	//or if the input doesn't match any case, it will execute the default case and print an error message.
+	switch quad {
+	case "A", "a", "quadA", "quada", "Quada", "QuadA":
 		piscine.QuadA(x, y)
-	} else if quad == "B" || quad == "b" || quad == "quadB" || quad == "quadb" || quad == "Quadb" || quad == "QuadB" {
+	case "B", "b", "quadB", "quadb", "Quadb", "QuadB":
 		piscine.QuadB(x, y)
-	} else if quad == "C" || quad == "c" || quad == "quadC" || quad == "quadc" || quad == "Quadc" || quad == "QuadC" {
+	case "C", "c", "quadC", "quadc", "Quadc", "QuadC":
 		piscine.QuadC(x, y)
-	} else if quad == "D" || quad == "d" || quad == "quadD" || quad == "quadd" || quad == "Quadd" || quad == "QuadD" {
+	case "D", "d", "quadD", "quadd", "Quadd", "QuadD":
 		piscine.QuadD(x, y)
-	} else if quad == "E" || quad == "e" || quad == "quadE" || quad == "quade" || quad == "Quade" || quad == "QuadE" {
+	case "E", "e", "quadE", "quade", "Quade", "QuadE":
 		piscine.QuadE(x, y)
-	} else {
+	default:
 		fmt.Println("Unknown quad type. Use A, B, C, D, or E.")
 	}
 }
